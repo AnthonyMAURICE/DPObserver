@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleObserver", "ConsoleObserver\ConsoleObserver.csproj", "{432068F6-EA08-476F-B6CB-6CBECE513B57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleObserver", "ConsoleObserver\ConsoleObserver.csproj", "{432068F6-EA08-476F-B6CB-6CBECE513B57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryObs", "ClassLibraryObs\ClassLibraryObs.csproj", "{9EEA8A97-61C5-4BBE-A7B1-F0F6A02A83D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryObs", "ClassLibraryObs\ClassLibraryObs.csproj", "{9EEA8A97-61C5-4BBE-A7B1-F0F6A02A83D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsObserver", "WinFormsObserver\WinFormsObserver.csproj", "{98A1EB29-1236-4290-A430-D4823491C4F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9EEA8A97-61C5-4BBE-A7B1-F0F6A02A83D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EEA8A97-61C5-4BBE-A7B1-F0F6A02A83D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EEA8A97-61C5-4BBE-A7B1-F0F6A02A83D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A1EB29-1236-4290-A430-D4823491C4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A1EB29-1236-4290-A430-D4823491C4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A1EB29-1236-4290-A430-D4823491C4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A1EB29-1236-4290-A430-D4823491C4F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
