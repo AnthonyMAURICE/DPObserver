@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryObs
 {
-    public class Tourist : Person
+    public class Tourist(string _name) : Person(_name)
     {
-        public Tourist(string _name) : base(_name)
-        {
-            
-        }
         public void RandomizedSpy()
         {
             Random rnd = new Random();
@@ -23,9 +19,9 @@ namespace ClassLibraryObs
             this.NotifyObserver();
         }
 
-        public override void AddObserver()
+        public void AddObserver(Counterintelligence counterintelligence)
         {
-            this.AddObserver(this.Counterintelligence);
+            this.obs.Add(counterintelligence);
         }
 
         private void Encrypt()

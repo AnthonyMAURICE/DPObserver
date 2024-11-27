@@ -6,17 +6,19 @@ namespace ClassLibraryObs
     public abstract class Person : ISubject
     {
         private string name = string.Empty;
-
+        private bool busted = false;
+        private bool spy = false;
+        private bool ci = false;
+        private bool sp = false;
         protected string message = "I'm not a spy, I swear !";     
-        protected List<ICitizenObserver> subs = [];
-
-        private Counterintelligence counterintelligence = new();
-        private SecretPolice secretPolice = new();
+        protected List<ICitizenObserver> obs = [];
 
         public string Message { get => message; set => message = value; }
         public string Name { get => name; set => name = value; }
-        protected Counterintelligence Counterintelligence { get => counterintelligence; set => counterintelligence = value; }
-        protected SecretPolice SecretPolice { get => secretPolice; set => secretPolice = value; }
+        public bool Sp { get => sp; set => sp = value; }
+        public bool Ci { get => ci; set => ci = value; }
+        public bool Busted { get => busted; set => busted = value; }
+        public bool Spy { get => spy; set => spy = value; }
 
         public Person() 
         {
@@ -28,25 +30,34 @@ namespace ClassLibraryObs
             this.name = _name;
         }
 
-        public abstract void AddObserver();
-
-        public void AddObserver(ICitizenObserver subscriber)
+        public void AddObserver(ICitizenObserver observer)
         {
-            this.subs.Add(subscriber);
+            this.obs.Add(observer);
         }
 
         public void NotifyObserver()
         {
-            foreach (ICitizenObserver subscriber in this.subs)
+            foreach (ICitizenObserver observer in this.obs)
             {
-                subscriber.Update(this);
+                observer.Update(this);
             }
         }
 
-        public void RemoveObserver(ICitizenObserver subscriber)
+        public void RemoveObserver(ICitizenObserver observer)
         {
-            this.subs.Remove(subscriber);
+            this.obs.Remove(observer);
         }
 
+        public void HasBeenObserved(ICitizenObserver observer)
+        {
+            if (observer.GetType() == typeof(WFSecretPolice))
+            {
+                this.busted = true;
+            }
+            else
+            {
+                this.spy = true;
+            }
+        }
     }
 }

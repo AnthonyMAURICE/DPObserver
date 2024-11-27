@@ -7,7 +7,7 @@ namespace ConsoleObserver
     {
         static void Main(string[] args)
         {
-
+            
             DoubleAgent spyOne = new("Bob");
             RegularCitizen regularOne = new("Bill");
             RegularCitizen regularTwo = new("Billy");
@@ -15,11 +15,8 @@ namespace ConsoleObserver
             Tourist touristTwo = new("Bobby-Bill");
 
             List<Person> persons = [regularOne, regularTwo, spyOne, touristOne, touristTwo];
-
-            foreach (Person person in persons) 
-            {
-                person.AddObserver();
-            }
+            SecurityOffice securityOffice = new();
+            securityOffice.ConsoleManageObservers(persons);
 
             spyOne.Encrypt();
             regularOne.RandomizedVote();

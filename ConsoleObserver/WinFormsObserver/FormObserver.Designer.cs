@@ -28,121 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             label1 = new Label();
-            labelCitizen = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            listBoxPersons = new ListBox();
             button1 = new Button();
-            labelCheckCitizen = new Label();
-            labelCheckTourist = new Label();
-            errorProvider1 = new ErrorProvider(components);
             button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            listBoxBusted = new ListBox();
+            label2 = new Label();
+            label3 = new Label();
+            button6 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(104, 9);
+            label1.ForeColor = SystemColors.ControlText;
+            label1.Location = new Point(152, 9);
             label1.Name = "label1";
-            label1.Size = new Size(286, 32);
+            label1.Size = new Size(332, 32);
             label1.TabIndex = 0;
-            label1.Text = "Welcome Prime Secretary";
+            label1.Text = "Spies and dissidents Observer";
             // 
-            // labelCitizen
+            // listBoxPersons
             // 
-            labelCitizen.AutoSize = true;
-            labelCitizen.Font = new Font("Segoe UI", 10F);
-            labelCitizen.Location = new Point(25, 58);
-            labelCitizen.Name = "labelCitizen";
-            labelCitizen.Size = new Size(128, 19);
-            labelCitizen.TabIndex = 1;
-            labelCitizen.Text = "Enter citizen name :";
+            listBoxPersons.FormattingEnabled = true;
+            listBoxPersons.ItemHeight = 15;
+            listBoxPersons.Location = new Point(12, 61);
+            listBoxPersons.Name = "listBoxPersons";
+            listBoxPersons.Size = new Size(164, 229);
+            listBoxPersons.TabIndex = 1;
+            listBoxPersons.SelectedIndexChanged += listBoxPersons_SelectedIndexChanged;
+            // 
+            // button1
+            // 
+            button1.Enabled = false;
+            button1.Location = new Point(218, 61);
+            button1.Name = "button1";
+            button1.Size = new Size(196, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Add Counterintelligence";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Enabled = false;
+            button2.Location = new Point(218, 138);
+            button2.Name = "button2";
+            button2.Size = new Size(196, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Add Secret Police";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Enabled = false;
+            button3.Location = new Point(250, 222);
+            button3.Name = "button3";
+            button3.Size = new Size(130, 23);
+            button3.TabIndex = 4;
+            button3.Text = "Observe";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Enabled = false;
+            button4.Location = new Point(221, 99);
+            button4.Name = "button4";
+            button4.Size = new Size(193, 23);
+            button4.TabIndex = 5;
+            button4.Text = "Remove Counterintelligence";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Enabled = false;
+            button5.Location = new Point(218, 178);
+            button5.Name = "button5";
+            button5.Size = new Size(196, 23);
+            button5.TabIndex = 6;
+            button5.Text = "Remove Secret Police";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // listBoxBusted
+            // 
+            listBoxBusted.FormattingEnabled = true;
+            listBoxBusted.ItemHeight = 15;
+            listBoxBusted.Location = new Point(461, 61);
+            listBoxBusted.Name = "listBoxBusted";
+            listBoxBusted.Size = new Size(161, 229);
+            listBoxBusted.TabIndex = 7;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(341, 58);
+            label2.Location = new Point(49, 43);
             label2.Name = "label2";
-            label2.Size = new Size(130, 19);
-            label2.TabIndex = 2;
-            label2.Text = "Enter tourist name :";
+            label2.Size = new Size(43, 15);
+            label2.TabIndex = 9;
+            label2.Text = "People";
             // 
-            // textBox1
+            // label3
             // 
-            textBox1.Location = new Point(25, 92);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(130, 23);
-            textBox1.TabIndex = 3;
+            label3.AutoSize = true;
+            label3.Location = new Point(484, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(113, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Spies and Dissidents";
             // 
-            // textBox2
+            // button6
             // 
-            textBox2.Location = new Point(341, 92);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(130, 23);
-            textBox2.TabIndex = 4;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(52, 134);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Test";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // labelCheckCitizen
-            // 
-            labelCheckCitizen.AutoSize = true;
-            labelCheckCitizen.Location = new Point(25, 125);
-            labelCheckCitizen.Name = "labelCheckCitizen";
-            labelCheckCitizen.Size = new Size(0, 15);
-            labelCheckCitizen.TabIndex = 6;
-            // 
-            // labelCheckTourist
-            // 
-            labelCheckTourist.AutoSize = true;
-            labelCheckTourist.Location = new Point(341, 125);
-            labelCheckTourist.Name = "labelCheckTourist";
-            labelCheckTourist.Size = new Size(0, 15);
-            labelCheckTourist.TabIndex = 7;
-            // 
-            // errorProvider1
-            // 
-            errorProvider1.ContainerControl = this;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(369, 134);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 8;
-            button2.Text = "Test";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button6.Location = new Point(250, 267);
+            button6.Name = "button6";
+            button6.Size = new Size(128, 23);
+            button6.TabIndex = 11;
+            button6.Text = "Close";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // FormObserver
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(511, 203);
-            Controls.Add(button2);
-            Controls.Add(labelCheckTourist);
-            Controls.Add(labelCheckCitizen);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(635, 302);
+            Controls.Add(button6);
+            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(labelCitizen);
+            Controls.Add(listBoxBusted);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(listBoxPersons);
             Controls.Add(label1);
             Name = "FormObserver";
             Text = "Observer";
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            Load += FormObserver_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,14 +180,15 @@
         #endregion
 
         private Label label1;
-        private Label labelCitizen;
-        private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
-        private Label labelCheckCitizen;
-        private Label labelCheckTourist;
-        private ErrorProvider errorProvider1;
+        private Button button3;
         private Button button2;
+        private Button button1;
+        private ListBox listBoxPersons;
+        private Button button5;
+        private Button button4;
+        private ListBox listBoxBusted;
+        private Label label2;
+        private Label label3;
+        private Button button6;
     }
 }

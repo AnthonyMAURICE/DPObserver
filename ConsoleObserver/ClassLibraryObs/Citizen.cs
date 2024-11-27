@@ -13,10 +13,5 @@ namespace ClassLibraryObs
 
         public string Vote { get => vote; set => vote = value; }
 
-        public override void AddObserver()
-        {
-            this.AddObserver(this.Counterintelligence);
-            this.AddObserver(this.SecretPolice);
-        }
     }
 }

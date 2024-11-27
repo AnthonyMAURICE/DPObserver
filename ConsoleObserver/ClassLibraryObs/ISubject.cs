@@ -12,5 +12,6 @@ namespace ClassLibraryObs
         void AddObserver(ICitizenObserver subscriber);
         void RemoveObserver(ICitizenObserver subscriber);
         void NotifyObserver();
+        void HasBeenObserved(ICitizenObserver observer);
     }
 }
