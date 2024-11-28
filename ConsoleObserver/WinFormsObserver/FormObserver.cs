@@ -101,7 +101,7 @@ namespace WinFormsObserver
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Reset();
         }
 
         private void EnabledButtons()
@@ -118,8 +118,19 @@ namespace WinFormsObserver
             obs = string.Empty;
             obs += persons[listBoxPersons.SelectedIndex].Ci ? ci : string.Empty;
             obs += persons[listBoxPersons.SelectedIndex].Sp ? sp : string.Empty;
-            //listBoxPersons.Items[listBoxPersons.SelectedIndex] = persons[listBoxPersons.SelectedIndex].Sp ? persons[listBoxPersons.SelectedIndex].Name : persons[listBoxPersons.SelectedIndex].Name + " (SP)";
             listBoxPersons.Items[listBoxPersons.SelectedIndex] = persons[listBoxPersons.SelectedIndex].Name + obs;
+        }
+
+        private void Reset()
+        {
+            listBoxBusted.Items.Clear();
+            for (int i = 0; i < listBoxPersons.Items.Count; i++) 
+            {
+                listBoxPersons.Items[i] = persons[i].Name;
+                persons[i].Ci = false;
+                persons[i].Sp = false;
+            }
+            this.EnabledButtons();
         }
     }
 }

@@ -150,7 +150,7 @@
             button6.Name = "button6";
             button6.Size = new Size(128, 23);
             button6.TabIndex = 11;
-            button6.Text = "Close";
+            button6.Text = "Reset";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
