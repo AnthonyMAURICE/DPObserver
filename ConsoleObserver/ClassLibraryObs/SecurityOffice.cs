@@ -10,14 +10,7 @@ namespace ClassLibraryObs
     public class SecurityOffice
     {
         private Counterintelligence counterintelligence = new();
-        private SecretPolice secretPolice = new();
-        private WFCounterintelligence wFCounterintelligence = new();
-        private WFSecretPolice wFSecretPolice = new();
-
-        public Counterintelligence Counterintelligence { get => counterintelligence; set => counterintelligence = value; }
-        public SecretPolice SecretPolice { get => secretPolice; set => secretPolice = value; }
-        internal WFCounterintelligence WFCounterintelligence { get => wFCounterintelligence; set => wFCounterintelligence = value; }
-        internal WFSecretPolice WFSecretPolice { get => wFSecretPolice; set => wFSecretPolice = value; }
+        private SecretPolice secretPolice = new(); 
 
         public void ConsoleManageObservers(List<Person> persons)
         {
@@ -30,6 +23,9 @@ namespace ClassLibraryObs
                 }
             }
         }
+
+        private WFCounterintelligence wFCounterintelligence = new();
+        private WFSecretPolice wFSecretPolice = new();
 
         public void WFAddObserversCI(Person person) 
         {

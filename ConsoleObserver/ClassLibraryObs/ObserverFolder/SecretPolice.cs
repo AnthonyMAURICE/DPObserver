@@ -12,7 +12,10 @@ namespace ClassLibraryObs.ObserverFolder
         {
             
             Console.WriteLine("Counting vote...");
-            Console.WriteLine(((Person)subject).Name + (this.DetectIfDissident(((Citizen)subject).Vote) ? " : Dissident detected ! Please report to your nearest police station." : " : Good day Citizen"));
+            Console.WriteLine(((Person)subject).Name + 
+                (this.DetectIfDissident(((Citizen)subject).Vote) ? 
+                " : Dissident detected ! Please report to your nearest police station." : 
+                " : Good day Citizen"));
         }
 
         private bool DetectIfDissident(string candidate) 

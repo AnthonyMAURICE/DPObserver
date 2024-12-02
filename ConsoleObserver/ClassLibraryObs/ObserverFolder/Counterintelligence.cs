@@ -12,7 +12,10 @@ namespace ClassLibraryObs.ObserverFolder
         public void Update(ISubject subject)
         {
             Console.WriteLine("Scanning in progress...");
-            Console.WriteLine(((Person)subject).Name + (this.DetectIfEncryption(((Person)subject).Message) ?  " : Spy detected ! Please report to your nearest police station." : " : Have a nice day."));
+            Console.WriteLine(((Person)subject).Name + 
+                (this.DetectIfEncryption(((Person)subject).Message) ?  
+                " : Spy detected ! Please report to your nearest police station." : 
+                " : Have a nice day."));
         }
 
         public bool DetectIfEncryption(string message)
