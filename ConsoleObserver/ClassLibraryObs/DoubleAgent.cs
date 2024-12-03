@@ -8,12 +8,21 @@ using System.Xml.Linq;
 
 namespace ClassLibraryObs
 {
-    public class DoubleAgent(string _name) : Citizen(_name)
+    public class DoubleAgent : Citizen
     {
-        public void Encrypt()
+        public DoubleAgent(string _name)
+        {
+            this.Name = _name;
+        }
+        public override void Encrypt()
         {
             this.message = "Я не шпион, клянусь !";
-            this.NotifyObserver();
+            this.NotifyObservers();
+        }
+
+        public override void Vote()
+        {
+            this.NotifyObservers();
         }
     }
 }

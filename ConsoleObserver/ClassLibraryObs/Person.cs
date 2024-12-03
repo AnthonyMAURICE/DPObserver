@@ -1,62 +1,54 @@
 ﻿using ClassLibraryObs;
-using ClassLibraryObs.ObserverFolder;
+using System;
 
 namespace ClassLibraryObs
 {
-    public abstract class Person : ISubject
+    public abstract class Person : IObservable<Person>
     {
         private string name = string.Empty;
-        private bool busted = false;
-        private bool spy = false;
-        private bool ci = false;
-        private bool sp = false;
         protected string message = "I'm not a spy, I swear !";     
-        protected List<ICitizenObserver> obs = [];
+        protected List<IObserver<Person>> obs = [];
+        protected Random random = new();
 
         public string Message { get => message; set => message = value; }
         public string Name { get => name; set => name = value; }
-        public bool Sp { get => sp; set => sp = value; }
-        public bool Ci { get => ci; set => ci = value; }
-        public bool Busted { get => busted; set => busted = value; }
-        public bool Spy { get => spy; set => spy = value; }
 
-        public Person() 
-        {
-            this.name = "Random Person";
-        }
 
-        public Person (string _name)
-        {
-            this.name = _name;
-        }
+        public abstract void Encrypt();
 
-        public void AddObserver(ICitizenObserver observer)
+        public void AddObserver(IObserver<Person> observer)
         {
             this.obs.Add(observer);
         }
 
-        public void NotifyObserver()
-        {
-            foreach (ICitizenObserver observer in this.obs)
-            {
-                observer.Update(this);
-            }
-        }
-
-        public void RemoveObserver(ICitizenObserver observer)
+        public void RemoveObserver(IObserver<Person> observer)
         {
             this.obs.Remove(observer);
         }
 
-        public void HasBeenObserved(ICitizenObserver observer)
+        public IDisposable Subscribe(IObserver<Person> observer)
         {
-            if (observer.GetType() == typeof(WFSecretPolice))
+            if (!obs.Contains(observer))
             {
-                this.busted = true;
+                obs.Add(observer);
             }
-            else
+            return new Test(obs, observer);
+        }
+
+        public IDisposable Unsubscribe(IObserver<Person> observer)
+        {
+            if (obs.Contains(observer))
             {
-                this.spy = true;
+                obs.Remove(observer);
+            }
+            return new Test(obs, observer);
+        }
+
+        public void NotifyObservers()
+        {
+            foreach (IObserver<Person> observer in obs)
+            {
+                observer.OnNext(this);
             }
         }
     }

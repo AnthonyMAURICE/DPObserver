@@ -14,15 +14,25 @@ namespace ConsoleObserver
             Tourist touristOne = new("Billy-Bob");
             Tourist touristTwo = new("Bobby-Bill");
 
-            List<Person> persons = [regularOne, regularTwo, spyOne, touristOne, touristTwo];
-            SecurityOffice securityOffice = new();
-            securityOffice.ConsoleManageObservers(persons);
+            Counterintelligence counterintelligence = new();
+            SecretPolice secretPolice = new();
+
+            spyOne.Subscribe(counterintelligence);
+            spyOne.Subscribe(secretPolice);
+            regularOne.Subscribe(secretPolice);
+            regularTwo.Subscribe(secretPolice);
+            regularOne.Subscribe(counterintelligence);
+            regularTwo.Subscribe(counterintelligence);
+            touristOne.Subscribe(counterintelligence);
+            touristTwo.Subscribe(counterintelligence);
 
             spyOne.Encrypt();
-            regularOne.RandomizedVote();
-            regularTwo.RandomizedVote();
-            touristOne.RandomizedSpy();
-            touristTwo.RandomizedSpy();
+            regularOne.Encrypt();
+            regularTwo.Encrypt();
+            regularOne.Vote();
+            regularTwo.Vote();
+            touristOne.Encrypt();
+            touristTwo.Encrypt();
         }
     }
 }

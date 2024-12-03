@@ -7,27 +7,24 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryObs
 {
-    public class Tourist(string _name) : Person(_name)
+    public class Tourist : Person
     {
-        public void RandomizedSpy()
+        public Tourist(string _name)
         {
-            Random rnd = new Random();
-            if(rnd.Next(1,5) == 2)
-            {
-                Encrypt();
-            }
-            this.NotifyObserver();
+            this.Name = _name;
         }
-
         public void AddObserver(Counterintelligence counterintelligence)
         {
             this.obs.Add(counterintelligence);
         }
 
-        private void Encrypt()
+        public override void Encrypt()
         {
-            this.message = "Я не шпион, клянусь !"; 
+            if (this.random.Next(1, 5) == 2)
+            {
+                this.message = "Я не шпион, клянусь !";
+            }
+            this.NotifyObservers();
         }
-
     }
 }

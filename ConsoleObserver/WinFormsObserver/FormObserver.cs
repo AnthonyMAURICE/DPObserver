@@ -48,11 +48,11 @@ namespace WinFormsObserver
                 }
                 if (person.GetType() == typeof(RegularCitizen))
                 {
-                    ((RegularCitizen)person).RandomizedVote();
+                    ((RegularCitizen)person).Vote();
                 }
                 if (person.GetType() == typeof(Tourist))
                 {
-                    ((Tourist)person).RandomizedSpy();
+                    ((Tourist)person).Vote();
                 }
                 if (person.Busted || person.Spy)
                 {

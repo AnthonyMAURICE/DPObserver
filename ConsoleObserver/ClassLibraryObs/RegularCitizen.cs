@@ -8,17 +8,30 @@ using System.Xml.Linq;
 
 namespace ClassLibraryObs
 {
-    public class RegularCitizen(string _name) : Citizen(_name)
+    public class RegularCitizen : Citizen
     {
-
-        public void RandomizedVote()
+        public RegularCitizen(string _name)
         {
-            Random random = new();
-            if (random.Next(1, 4) == 2) 
+            this.Name = _name;
+        }
+        public override void Encrypt()
+        {
+            
+            if (this.random.Next(1, 4) == 2)
             {
-                this.vote = "Other Candidate";
+                this.message = "Я суперсекретный шпион !";
             }
-            this.NotifyObserver();
+            this.NotifyObservers();
+        }
+
+        public override void Vote()
+        {
+            
+            if (this.random.Next(1, 4) == 2) 
+            {
+                this.candidate = "Other Candidate";
+            }
+            this.NotifyObservers();
         }
     }
 }

@@ -9,9 +9,9 @@ namespace ClassLibraryObs
 {
     public interface ISubject
     {
-        void AddObserver(ICitizenObserver subscriber);
-        void RemoveObserver(ICitizenObserver subscriber);
+        void AddObserver(IObserver<Person> subscriber);
+        void RemoveObserver(Security subscriber);
         void NotifyObserver();
-        void HasBeenObserved(ICitizenObserver observer);
+        void HasBeenObserved(Security observer);
     }
 }

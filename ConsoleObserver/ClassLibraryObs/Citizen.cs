@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryObs
 {
-    public abstract class Citizen(string _name) : Person(_name)
+    public abstract class Citizen : Person
     {
         
-        protected string vote = "Designated Candidate";
+        protected string candidate = "Designated Candidate";
 
-        public string Vote { get => vote; set => vote = value; }
+        public string Candidate { get => candidate; set => candidate = value; }
+
+        public abstract void Vote();
 
     }
 }
