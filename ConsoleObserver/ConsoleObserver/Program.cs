@@ -15,10 +15,12 @@ namespace ConsoleObserver
 
             Counterintelligence counterintelligence = new();
             SecretPolice secretPolice = new();
-
-            //Subscriptions region
-            #region
+            
             spyOne.Subscribe(counterintelligence);
+
+            //Other Subscriptions region
+            #region
+            
             spyOne.Subscribe(secretPolice);
             regularOne.Subscribe(secretPolice);
             regularTwo.Subscribe(secretPolice);
