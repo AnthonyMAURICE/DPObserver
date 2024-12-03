@@ -5,10 +5,11 @@ namespace ClassLibraryObs
 {
     public abstract class Person : IObservable<Person>
     {
-        private string name = string.Empty;
+        protected string name = string.Empty;
         protected string message = "I'm not a spy, I swear !";     
         protected List<IObserver<Person>> obs = [];
         protected Random random = new();
+
 
         public string Message { get => message; }
         public string Name { get => name; }

@@ -11,7 +11,7 @@ namespace ClassLibraryObs
     {
         public Tourist(string _name)
         {
-            this.Name = _name;
+            this.name = _name;
         }
         public void AddObserver(Counterintelligence counterintelligence)
         {

@@ -12,7 +12,7 @@ namespace ClassLibraryObs
     {
         public RegularCitizen(string _name)
         {
-            this.Name = _name;
+            this.name = _name;
         }
         public override void Encrypt()
         {
