@@ -7,7 +7,6 @@ namespace ConsoleObserver
     {
         static void Main(string[] args)
         {
-            
             DoubleAgent spyOne = new("Bob");
             RegularCitizen regularOne = new("Bill");
             RegularCitizen regularTwo = new("Billy");
@@ -17,6 +16,8 @@ namespace ConsoleObserver
             Counterintelligence counterintelligence = new();
             SecretPolice secretPolice = new();
 
+            //Subscriptions region
+            #region
             spyOne.Subscribe(counterintelligence);
             spyOne.Subscribe(secretPolice);
             regularOne.Subscribe(secretPolice);
@@ -25,6 +26,7 @@ namespace ConsoleObserver
             regularTwo.Subscribe(counterintelligence);
             touristOne.Subscribe(counterintelligence);
             touristTwo.Subscribe(counterintelligence);
+            #endregion
 
             spyOne.Encrypt();
             regularOne.Encrypt();

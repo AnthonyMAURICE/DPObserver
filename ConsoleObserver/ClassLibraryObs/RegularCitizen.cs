@@ -16,7 +16,6 @@ namespace ClassLibraryObs
         }
         public override void Encrypt()
         {
-            
             if (this.random.Next(1, 4) == 2)
             {
                 this.message = "Я суперсекретный шпион !";
@@ -26,7 +25,6 @@ namespace ClassLibraryObs
 
         public override void Vote()
         {
-            
             if (this.random.Next(1, 4) == 2) 
             {
                 this.candidate = "Other Candidate";

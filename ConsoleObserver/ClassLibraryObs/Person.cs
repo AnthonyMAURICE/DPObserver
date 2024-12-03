@@ -10,8 +10,8 @@ namespace ClassLibraryObs
         protected List<IObserver<Person>> obs = [];
         protected Random random = new();
 
-        public string Message { get => message; set => message = value; }
-        public string Name { get => name; set => name = value; }
+        public string Message { get => message; }
+        public string Name { get => name; }
 
 
         public abstract void Encrypt();
@@ -35,13 +35,12 @@ namespace ClassLibraryObs
             return new Test(obs, observer);
         }
 
-        public IDisposable Unsubscribe(IObserver<Person> observer)
+        public void Unsubscribe(IObserver<Person> observer)
         {
             if (obs.Contains(observer))
             {
                 obs.Remove(observer);
             }
-            return new Test(obs, observer);
         }
 
         public void NotifyObservers()
