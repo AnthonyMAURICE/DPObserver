@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryObs
 {
-    internal class Test : IDisposable
+    internal class SecurityNetwork : IDisposable
     {
         private List<IObserver<Person>> _observers;
         private IObserver<Person> _observer;
 
-        public Test(List<IObserver<Person>> observers, IObserver<Person> observer)
+        public SecurityNetwork(List<IObserver<Person>> observers, IObserver<Person> observer)
         {
             this._observers = observers;
             this._observer = observer;

@@ -8,6 +8,14 @@ namespace ClassLibraryObs.ObserverFolder
 {
     public class SecretPolice : Security
     {
+        public override void ConnectTo(Person provider)
+        {
+            if (provider != null)
+            {
+                _disposed = provider.Subscribe(this);
+            }
+        }
+
         public override void OnCompleted()
         {
             // Notify the observer when the subject has finished sending a group of notifications

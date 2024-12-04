@@ -8,8 +8,8 @@ namespace ClassLibraryObs
 {
     public abstract class Citizen : Person
     {
-        
-        protected string candidate = "Designated Candidate";
+
+        protected string candidate = string.Empty;
 
         public string Candidate { get => candidate; set => candidate = value; }
 

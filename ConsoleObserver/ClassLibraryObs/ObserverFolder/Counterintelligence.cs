@@ -9,6 +9,7 @@ namespace ClassLibraryObs.ObserverFolder
 {
     public class Counterintelligence : Security
     {
+        #region
         //public void Update(ISubject subject)
         //{
         //    Console.WriteLine("Scanning in progress...");
@@ -17,17 +18,11 @@ namespace ClassLibraryObs.ObserverFolder
         //        " : Spy detected ! Please report to your nearest police station." : 
         //        " : Have a nice day."));
         //}
-
-        public bool DetectIfEncryption(string message)
-        {
-            return Regex.IsMatch(message, @"\p{IsCyrillic}");
-        }
-
+        #endregion
         public override void OnCompleted()
         {
             // Notify the observer when the subject has finished sending a group of notifications
         }
-
         public override void OnError(Exception error)
         {
             Console.WriteLine(error.Message);
@@ -40,6 +35,21 @@ namespace ClassLibraryObs.ObserverFolder
                 (this.DetectIfEncryption(subject.Message) ?
                 " : Spy detected ! Please report to your nearest police station." :
                 " : Have a nice day."));
+        }
+
+        public override void ConnectTo(Person provider)
+        {
+            if (provider != null)
+            {
+                _disposed = provider.Subscribe(this);
+            }
+        }
+
+        
+
+        private bool DetectIfEncryption(string message)
+        {
+            return Regex.IsMatch(message, @"\p{IsCyrillic}");
         }
     }
 }

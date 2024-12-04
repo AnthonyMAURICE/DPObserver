@@ -20,6 +20,10 @@ namespace ClassLibraryObs
             {
                 this.message = "Я суперсекретный шпион !";
             }
+            else
+            {
+                this.message = "I'm not a spy, I swear !";
+            }
             this.NotifyObservers();
         }
 
@@ -28,6 +32,10 @@ namespace ClassLibraryObs
             if (this.random.Next(1, 4) == 2) 
             {
                 this.candidate = "Other Candidate";
+            }
+            else
+            {
+                this.candidate = "Designated Candidate";
             }
             this.NotifyObservers();
         }

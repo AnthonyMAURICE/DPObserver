@@ -22,6 +22,7 @@ namespace ClassLibraryObs
 
         public override void Vote()
         {
+            this.candidate = "Designated Candidate";
             this.NotifyObservers();
         }
     }

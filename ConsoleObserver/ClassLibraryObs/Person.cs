@@ -6,7 +6,7 @@ namespace ClassLibraryObs
     public abstract class Person : IObservable<Person>
     {
         protected string name = string.Empty;
-        protected string message = "I'm not a spy, I swear !";     
+        protected string message = string.Empty;     
         protected List<IObserver<Person>> obs = [];
         protected Random random = new();
 
@@ -29,24 +29,24 @@ namespace ClassLibraryObs
 
         public IDisposable Subscribe(IObserver<Person> observer)
         {
-            if (!obs.Contains(observer))
+            if (!this.obs.Contains(observer))
             {
-                obs.Add(observer);
+                this.obs.Add(observer);
             }
-            return new Test(obs, observer);
+            return new SecurityNetwork(this.obs, observer);
         }
 
         public void Unsubscribe(IObserver<Person> observer)
         {
-            if (obs.Contains(observer))
+            if (this.obs.Contains(observer))
             {
-                obs.Remove(observer);
+                this.obs.Remove(observer);
             }
         }
 
         public void NotifyObservers()
         {
-            foreach (IObserver<Person> observer in obs)
+            foreach (IObserver<Person> observer in this.obs)
             {
                 observer.OnNext(this);
             }

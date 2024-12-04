@@ -24,6 +24,10 @@ namespace ClassLibraryObs
             {
                 this.message = "Я не шпион, клянусь !";
             }
+            else
+            {
+                this.message = "I'm not a spy, I swear !";
+            }
             this.NotifyObservers();
         }
     }
