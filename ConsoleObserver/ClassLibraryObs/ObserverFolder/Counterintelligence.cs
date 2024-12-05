@@ -45,8 +45,6 @@ namespace ClassLibraryObs.ObserverFolder
             }
         }
 
-        
-
         private bool DetectIfEncryption(string message)
         {
             return Regex.IsMatch(message, @"\p{IsCyrillic}");

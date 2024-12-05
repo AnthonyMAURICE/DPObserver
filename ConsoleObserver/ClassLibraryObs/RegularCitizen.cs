@@ -16,27 +16,13 @@ namespace ClassLibraryObs
         }
         public override void Encrypt()
         {
-            if (this.random.Next(1, 4) == 2)
-            {
-                this.message = "Я суперсекретный шпион !";
-            }
-            else
-            {
-                this.message = "I'm not a spy, I swear !";
-            }
+            this.message = (this.random.Next(1, 4) == 2) ? "Я суперсекретный шпион !" : "I'm not a spy, I swear !";
             this.NotifyObservers();
         }
 
         public override void Vote()
         {
-            if (this.random.Next(1, 4) == 2) 
-            {
-                this.candidate = "Other Candidate";
-            }
-            else
-            {
-                this.candidate = "Designated Candidate";
-            }
+            this.candidate = (this.random.Next(1, 4) == 2) ? "Other Candidate" : "Designated Candidate";
             this.NotifyObservers();
         }
     }

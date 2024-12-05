@@ -35,16 +35,6 @@ namespace ClassLibraryObs.ObserverFolder
                 " : You're a good citizen"));
         }
 
-        //public void Update(ISubject subject)
-        //{
-            
-        //    Console.WriteLine("Counting vote...");
-        //    Console.WriteLine(((Person)subject).Name + 
-        //        (this.DetectIfDissident(((Citizen)subject).Candidate) ? 
-        //        " : Dissident detected ! Please report to your nearest police station." : 
-        //        " : You're a good citizen"));
-        //}
-
         private bool DetectIfDissident(string candidate) 
         {
             return candidate != "Designated Candidate";

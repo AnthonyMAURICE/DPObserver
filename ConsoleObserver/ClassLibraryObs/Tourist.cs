@@ -20,14 +20,7 @@ namespace ClassLibraryObs
 
         public override void Encrypt()
         {
-            if (this.random.Next(1, 5) == 2)
-            {
-                this.message = "Я не шпион, клянусь !";
-            }
-            else
-            {
-                this.message = "I'm not a spy, I swear !";
-            }
+            this.message = (this.random.Next(1, 5) == 2)? "Я не шпион, клянусь !" : "I'm not a spy, I swear !";
             this.NotifyObservers();
         }
     }

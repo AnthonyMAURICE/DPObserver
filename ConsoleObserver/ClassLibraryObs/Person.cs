@@ -10,22 +10,10 @@ namespace ClassLibraryObs
         protected List<IObserver<Person>> obs = [];
         protected Random random = new();
 
-
         public string Message { get => message; }
         public string Name { get => name; }
 
-
         public abstract void Encrypt();
-
-        public void AddObserver(IObserver<Person> observer)
-        {
-            this.obs.Add(observer);
-        }
-
-        public void RemoveObserver(IObserver<Person> observer)
-        {
-            this.obs.Remove(observer);
-        }
 
         public IDisposable Subscribe(IObserver<Person> observer)
         {
